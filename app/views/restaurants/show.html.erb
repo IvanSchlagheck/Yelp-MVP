@@ -1,0 +1,18 @@
+<div class= "mx-3">
+<br>
+<h1 class= "h2"><%= @restaurant.name %> </h1>
+<br>
+<p class= "h4"><%= @restaurant.address %> </p>
+<br>
+<p class= "h4"><%= @restaurant.phone_number %> </p>
+<br>
+<p class= "h5"><%= @restaurant.category %> </p>
+<br>
+<% @restaurant.reviews.each do |review|  %>
+  <p><%= review.content %> </p>
+  <hr>
+<% end %>
+<%= link_to 'Edit', edit_restaurant_path(@restaurant) %>
+<%= link_to 'Back', restaurants_path %>
+<%= link_to 'Leave a review', new_restaurant_review_path(@restaurant) %>
+</div>
